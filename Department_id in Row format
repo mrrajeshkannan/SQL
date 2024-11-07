@@ -1,0 +1,38 @@
+Write a SQL query for Sum of salary group by job_id showed by depart_id (Note Department_id in Row format):-
+SELECT job_id, 
+SUM(DECODE(DEPARTMENT_ID, 10, SALARY) ) AS DEPT_10,
+SUM(DECODE(DEPARTMENT_ID, 20, SALARY) ) AS DEPT_20,
+SUM(DECODE(DEPARTMENT_ID, 30, SALARY) ) AS DEPT_30,
+SUM(DECODE(DEPARTMENT_ID, 40, SALARY) ) AS DEPT_40,
+SUM(DECODE(DEPARTMENT_ID, 50, SALARY) ) AS DEPT_50,
+
+SUM(DECODE(DEPARTMENT_ID, 60, SALARY) ) AS DEPT_60,
+SUM(DECODE(DEPARTMENT_ID, 70, SALARY) ) AS DEPT_70,
+SUM(DECODE(DEPARTMENT_ID, 80, SALARY) ) AS DEPT_80,
+SUM(DECODE(DEPARTMENT_ID, 90, SALARY) ) AS DEPT_90,
+SUM(DECODE(DEPARTMENT_ID, 100, SALARY) ) AS DEPT_100,
+SUM(DECODE(DEPARTMENT_ID, 110, SALARY) ) AS DEPT_110
+FROM EMPLOYEES
+GROUP BY JOB_ID ORDER BY JOB_ID;
+
+Output will be 
+JOB_ID	DEPT_10	DEPT_20	DEPT_30	DEPT_40	DEPT_50	DEPT_60	DEPT_70	DEPT_80	DEPT_90	DEPT_100	DEPT_110
+AC_ACCOUNT	- 	- 	- 	- 	- 	- 	- 	- 	- 	- 	8300
+AC_MGR	- 	- 	- 	- 	- 	- 	- 	- 	- 	- 	12000
+AD_ASST	4400	- 	- 	- 	- 	- 	- 	- 	- 	- 	- 
+AD_PRES	- 	- 	- 	- 	- 	- 	- 	- 	24000	- 	- 
+AD_VP	- 	- 	- 	- 	- 	- 	- 	- 	34000	- 	- 
+FI_ACCOUNT	- 	- 	- 	- 	- 	- 	- 	- 	- 	39600	- 
+FI_MGR	- 	- 	- 	- 	- 	- 	- 	- 	- 	12000	- 
+HR_REP	- 	- 	- 	6500	- 	- 	- 	- 	- 	- 	- 
+IT_PROG	- 	- 	- 	- 	- 	28800	- 	- 	- 	- 	- 
+MK_MAN	- 	13000	- 	- 	- 	- 	- 	- 	- 	- 	- 
+MK_REP	- 	6000	- 	- 	- 	- 	- 	- 	- 	- 	- 
+PR_REP	- 	- 	- 	- 	- 	- 	10000	- 	- 	- 	- 
+PU_CLERK	- 	- 	13900	- 	- 	- 	- 	- 	- 	- 	- 
+PU_MAN	- 	- 	11000	- 	- 	- 	- 	- 	- 	- 	- 
+SA_MAN	- 	- 	- 	- 	- 	- 	- 	61000	- 	- 	- 
+SA_REP	- 	- 	- 	- 	- 	- 	- 	243500	- 	- 	- 
+SH_CLERK	- 	- 	- 	- 	64300	- 	- 	- 	- 	- 	- 
+ST_CLERK	- 	- 	- 	- 	55700	- 	- 	- 	- 	- 	- 
+ST_MAN	- 	- 	- 	- 	36400	- 	- 	- 	- 	- 	-     
