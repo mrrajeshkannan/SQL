@@ -1,0 +1,9 @@
+/* Best way to find Duplicate in Huge record like more then 10M*/
+
+/* Tested and regular used in over 15M records*/
+SELECT * 
+FROM 
+EMPLOYEES A 
+WHERE ROWID < (SELECT MAX(ROWID) 
+                FROM EMPLOYEES B 
+                WHERE B.EMPLOYEE_ID=A.EMPLOYEE_ID);
