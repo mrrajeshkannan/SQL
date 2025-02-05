@@ -1,0 +1,56 @@
+/* If you want to migrate Production to QC or Standby to QC you can use it for fast migrations */
+
+
+/* Creating Data base link between 2 server */
+
+CREATE DATABASE LINK PROD_TO_QC
+CONNECT TO production_user IDENTIFIED BY "password123"
+USING '(DESCRIPTION =
+  (ADDRESS_LIST =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = prod-db-server)(PORT = 1521))
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME = prod_service_name)
+  )
+)';
+
+
+DECLARE
+BEGIN
+    FOR C1_EMP_TRAN IN (SELECT * FROM EMPLOYEE_DETAILS@QC_STD) LOOP
+        INSERT INTO EMPLOYEES (
+            EMPLOYEE_ID,
+            EMPLOYEE_NAME,
+            DEPARTMENT_ID,
+            JOB_TITLE,
+            JOIN_DATE,
+            END_DATE,
+            GENDER,
+            AGE,
+            SALARY,
+            BONUS,
+            MANAGER_ID,
+            ADDRESS,
+            PHONE_NUMBER,
+            EMAIL,
+            STATUS
+        ) 
+        VALUES (
+            C1_EMP_TRAN.EMPLOYEE_ID,
+            C1_EMP_TRAN.EMPLOYEE_NAME,
+            C1_EMP_TRAN.DEPARTMENT_ID,
+            C1_EMP_TRAN.JOB_TITLE,
+            C1_EMP_TRAN.JOIN_DATE,
+            C1_EMP_TRAN.END_DATE,
+            C1_EMP_TRAN.GENDER,
+            C1_EMP_TRAN.AGE,
+            C1_EMP_TRAN.SALARY,
+            C1_EMP_TRAN.BONUS,
+            C1_EMP_TRAN.MANAGER_ID,
+            C1_EMP_TRAN.ADDRESS,
+            C1_EMP_TRAN.PHONE_NUMBER,
+            C1_EMP_TRAN.EMAIL,
+            C1_EMP_TRAN.STATUS
+        );
+    END LOOP;
+END;
