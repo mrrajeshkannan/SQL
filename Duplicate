@@ -1,6 +1,7 @@
 /* Best way to find Duplicate in Huge record like more then 10M*/
 
-/* Tested and regular used in over 15M records*/
+/* Tested and regular used in over 15M records work only in Oracle*/
+
 SELECT * 
 FROM 
 EMPLOYEES A 
