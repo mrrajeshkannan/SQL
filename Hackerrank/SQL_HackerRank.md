@@ -17,3 +17,20 @@ WHERE COUNTRYCODE = 'USA'
 AND 
 POPULATION >= 120000;
 ```
+
+<br /> 
+
+[Select All](https://www.hackerrank.com/challenges/select-all-sql/problem)
+
+```sql
+SELECT * FROM CITY;
+```
+
+<br /> 
+
+[select-by-id](https://www.hackerrank.com/challenges/select-by-id/problem)
+```sql
+SELECT *  
+FROM CITY  
+WHERE ID = 1661;
+ ```
