@@ -9,6 +9,7 @@ Query a count of the number of cities in CITY having a Population larger than 10
 SELECT COUNT(ID) FROM CITY WHERE POPULATION > 100000;
  ```
 
+<br /> 
 [Revising Aggregations - The Sum Function](https://www.hackerrank.com/challenges/revising-aggregations-sum/problem)
 <br /> 
 
