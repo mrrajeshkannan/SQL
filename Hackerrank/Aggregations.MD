@@ -10,7 +10,9 @@ SELECT COUNT(ID) FROM CITY WHERE POPULATION > 100000;
  ```
 
 <br /> 
+
 [Revising Aggregations - The Sum Function](https://www.hackerrank.com/challenges/revising-aggregations-sum/problem)
+
 <br /> 
 
 Query the total population of all cities in CITY where District is California.
