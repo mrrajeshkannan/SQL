@@ -20,7 +20,7 @@ ORDER BY COUNT(1), Occupation;
 
 
 
-[the-company](https://www.hackerrank.com/challenges/the-company/problem)
+[New Companies](https://www.hackerrank.com/challenges/the-company/problem)
 
 
 ```sql
