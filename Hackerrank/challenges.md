@@ -4,27 +4,32 @@
 
 [The PADS](https://www.hackerrank.com/challenges/the-pads/problem)
 
-Sample Input    <div right> Your right-aligned content here. </div>
+<table>
+  <tr>
+    <th style="text-align: left;">Sample Input</th>
+    <th style="text-align: left;">Sample Output</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/f968b652-37fa-4eaa-886f-395a8ececca4" alt="Sample Input"></td>
+    <td>
+      Ashely(P)<br>
+      Christeen(P)<br>
+      Jane(A)<br>
+      Jenny(D)<br>
+      Julia(A)<br>
+      Ketty(P)<br>
+      Maria(A)<br>
+      Meera(S)<br>
+      Priya(S)<br>
+      Samantha(D)<br>
+      There are a total of 2 doctors.<br>
+      There are a total of 2 singers.<br>
+      There are a total of 3 actors.<br>
+      There are a total of 3 professors.
+    </td>
+  </tr>
+</table>
 
-
-![image](https://github.com/user-attachments/assets/f968b652-37fa-4eaa-886f-395a8ececca4)
-
-
-
-Ashely(P) </br>
-Christeen(P) </br>
-Jane(A)</br>
-Jenny(D)</br>
-Julia(A)</br>
-Ketty(P)</br>
-Maria(A)</br>
-Meera(S)</br>
-Priya(S)</br>
-Samantha(D)</br>
-There are a total of 2 doctors.</br>
-There are a total of 2 singers.</br>
-There are a total of 3 actors.</br>
-There are a total of 3 professors.</br>
 
 Explanation
 
