@@ -4,37 +4,6 @@
 
 [The PADS](https://www.hackerrank.com/challenges/the-pads/problem)
 
-<table>
-  <tr>
-    <th style="text-align: left;">Sample Input</th>
-    <th style="text-align: left;">Sample Output</th>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/user-attachments/assets/f968b652-37fa-4eaa-886f-395a8ececca4" alt="Sample Input"></td>
-    <td>
-      Ashely(P)<br>
-      Christeen(P)<br>
-      Jane(A)<br>
-      Jenny(D)<br>
-      Julia(A)<br>
-      Ketty(P)<br>
-      Maria(A)<br>
-      Meera(S)<br>
-      Priya(S)<br>
-      Samantha(D)<br>
-      There are a total of 2 doctors.<br>
-      There are a total of 2 singers.<br>
-      There are a total of 3 actors.<br>
-      There are a total of 3 professors.
-    </td>
-  </tr>
-</table>
-
-
-Explanation
-
-The results of the first query are formatted to the problem description's specifications.
-The results of the second query are ascendingly ordered first by number of names corresponding to each profession (), and then alphabetically by profession (, and ).
 
 ```sql
 SELECT Name ||'('|| substr(Occupation,1,1) ||')'
@@ -45,6 +14,30 @@ SELECT 'There are a total of ' || COUNT(1) || ' ' || lower(Occupation) ||'s.'
 FROM OCCUPATIONS
 GROUP BY Occupation
 ORDER BY COUNT(1), Occupation;
+```
+
+<br /> 
+
+
+
+[the-company](https://www.hackerrank.com/challenges/the-company/problem)
+
+
+```sql
+SELECT 
+C.COMPANY_CODE, 
+C.FOUNDER , 
+COUNT(DISTINCT LM.LEAD_MANAGER_CODE), 
+COUNT(DISTINCT SM.SENIOR_MANAGER_CODE),
+COUNT(DISTINCT M.MANAGER_CODE), 
+COUNT(DISTINCT E.EMPLOYEE_CODE)
+FROM COMPANY C FULL JOIN LEAD_MANAGER LM
+ON C.COMPANY_CODE=LM.COMPANY_CODE FULL JOIN SENIOR_MANAGER SM
+ON LM.COMPANY_CODE=SM.COMPANY_CODE FULL JOIN MANAGER M
+ON SM.COMPANY_CODE=M.COMPANY_CODE FULL JOIN EMPLOYEE E
+ON M.COMPANY_CODE=E.COMPANY_CODE
+GROUP BY C.COMPANY_CODE, C.FOUNDER
+ORDER BY C.COMPANY_CODE;
 ```
 
 <br /> 
