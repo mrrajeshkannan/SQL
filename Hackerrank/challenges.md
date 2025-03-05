@@ -41,3 +41,28 @@ ORDER BY C.COMPANY_CODE;
 ```
 
 <br /> 
+
+
+
+[Occupations](https://www.hackerrank.com/challenges/occupations/problem)
+
+
+```sql
+WITH rk AS (
+    SELECT 
+        NAME,
+        OCCUPATION,
+        ROW_NUMBER() OVER (PARTITION BY OCCUPATION ORDER BY NAME) AS RN
+    FROM OCCUPATIONS
+)
+SELECT 
+    MIN(CASE WHEN OCCUPATION = 'Doctor' THEN NAME END) AS Doctor,
+    MIN(CASE WHEN OCCUPATION = 'Professor' THEN NAME END) AS Professor,
+    MIN(CASE WHEN OCCUPATION = 'Singer' THEN NAME END) AS Singer,
+    MIN(CASE WHEN OCCUPATION = 'Actor' THEN NAME END) AS Actor
+FROM rk
+GROUP BY RN
+ORDER BY RN;
+```
+
+<br /> 
