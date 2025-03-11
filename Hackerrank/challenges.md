@@ -66,3 +66,29 @@ ORDER BY RN;
 ```
 
 <br /> 
+
+
+
+[weather-observation-station-14](https://www.hackerrank.com/challenges/weather-observation-station-14/problem)
+
+
+```sql
+SELECT ROUND(MAX(LAT_N),4)
+FROM STATION
+WHERE LAT_N < 137.2345;
+```
+
+<br /> 
+
+
+
+[weather-observation-station-15](https://www.hackerrank.com/challenges/weather-observation-station-15/problem)
+
+
+```sql
+SELECT ROUND(LONG_W, 4)  
+FROM STATION  
+WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);
+```
+
+<br /> 
