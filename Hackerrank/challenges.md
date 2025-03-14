@@ -145,3 +145,29 @@ FROM
 ```
 
 <br /> 
+
+
+
+
+[print-prime-numbers](https://www.hackerrank.com/challenges/print-prime-numbers/problem)
+
+
+```sql
+WITH numbers AS (
+    SELECT LEVEL AS num
+    FROM dual
+    CONNECT BY LEVEL <= 1000
+)
+SELECT LISTAGG(num, '&') WITHIN GROUP (ORDER BY num) AS prime_numbers
+FROM numbers n
+WHERE num > 1 
+AND NOT EXISTS (
+    SELECT 1 
+    FROM numbers d
+    WHERE d.num > 1 
+    AND d.num < n.num 
+    AND MOD(n.num, d.num) = 0
+);
+```
+
+<br /> 
